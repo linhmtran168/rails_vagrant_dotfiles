@@ -39,5 +39,5 @@ sudo -u vagrant -H /home/vagrant/.rbenv/shims/gem install bundle pry awesome_pri
 
 # Add dotfiles
 sudo -u vagrant -H git clone git@github.com:linhmtran168/rails_vagrant_dotfiles.git /home/vagrant/dotfiles
-sudo -u vagrant -H ln -sf /home/vagrant/.zshrc /home/vagrant/.zshrc
-sudo -u vagrant -H ln -sf /home/vagrant/.zshrc /home/vagrant/.tmux.conf
+sudo -u vagrant -H ln -sf /home/vagrant/dotfiles/.zshrc /home/vagrant/.zshrc
+sudo -u vagrant -H ln -sf /home/vagrant/dotfiles/.tmux.conf /home/vagrant/.tmux.conf
