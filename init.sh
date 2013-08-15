@@ -28,8 +28,6 @@ sudo -u vagrant -H curl -L https://github.com/robbyrussell/oh-my-zsh/raw/master/
 
 # Install rbenv
 sudo -u vagrant -H git clone https://github.com/sstephenson/rbenv.git /home/vagrant/.rbenv
-sudo -u vagrant -H echo 'export PATH="$HOME/.rbenv/bin:$PATH"' >> /home/vagrant/.zshrc
-sudo -u vagrant -H echo 'eval "$(rbenv init -)"' >> /home/vagrant/.zshrc
 
 # Install ruby-build
 sudo -u vagrant -H git clone https://github.com/sstephenson/ruby-build.git /home/vagrant/.rbenv/plugins/ruby-build
@@ -38,3 +36,8 @@ sudo -u vagrant -H git clone https://github.com/sstephenson/rbenv-gem-rehash.git
 sudo -u vagrant -H /home/vagrant/.rbenv/bin/rbenv install 2.0.0-p247
 sudo -u vagrant -H /home/vagrant/.rbenv/bin/rbenv global 2.0.0-p247
 sudo -u vagrant -H /home/vagrant/.rbenv/shims/gem install bundle pry awesome_print
+
+# Add dotfiles
+sudo -u vagrant -H git clone git@github.com:linhmtran168/rails_vagrant_dotfiles.git /home/vagrant/dotfiles
+sudo -u vagrant -H ln -sf /home/vagrant/.zshrc /home/vagrant/.zshrc
+sudo -u vagrant -H ln -sf /home/vagrant/.zshrc /home/vagrant/.tmux.conf
