@@ -12,13 +12,14 @@ sudo apt-get update
 sudo apt-get install -y nodejs
 
 # Install postgresql
-sudo add-apt-repository ppa:pitti/postgresql
+echo "Writing /etc/apt/sources.list.d/pgdg.list ..."
+sudo cat > /etc/apt/sources.list.d/pgdg.list <<EOF
+deb http://apt.postgresql.org/pub/repos/apt/ precise-pgdg main
+EOF
+wget --quiet -O - http://apt.postgresql.org/pub/repos/apt/ACCC4CF8.asc | sudo apt-key add -
 sudo apt-get update
-sudo apt-get install -y libpq-dev
-sudo apt-get install -y postgresql-9.2
-sudo apt-get install -y postgresql-client-9.2
-sudo apt-get install -y postgresql-server-dev-9.2
-sudo apt-get install -y postgresql-contrib-9.2
+sudo apt-get install postgresql 
+
 
 # Change setting for vagrant user
 cd /home/vagrant
@@ -38,6 +39,6 @@ sudo -u vagrant -H /home/vagrant/.rbenv/bin/rbenv global 2.0.0-p247
 sudo -u vagrant -H /home/vagrant/.rbenv/shims/gem install bundle pry awesome_print
 
 # Add dotfiles
-sudo -u vagrant -H git clone git@github.com:linhmtran168/rails_vagrant_dotfiles.git /home/vagrant/dotfiles
+sudo -u vagrant -H git clone https://github.com/linhmtran168/rails_vagrant_dotfiles.git /home/vagrant/dotfiles
 sudo -u vagrant -H ln -sf /home/vagrant/dotfiles/.zshrc /home/vagrant/.zshrc
 sudo -u vagrant -H ln -sf /home/vagrant/dotfiles/.tmux.conf /home/vagrant/.tmux.conf
