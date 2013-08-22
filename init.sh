@@ -18,7 +18,7 @@ deb http://apt.postgresql.org/pub/repos/apt/ precise-pgdg main
 EOF
 wget --quiet -O - http://apt.postgresql.org/pub/repos/apt/ACCC4CF8.asc | sudo apt-key add -
 sudo apt-get update
-sudo apt-get install postgresql 
+sudo apt-get install -y postgresql 
 
 
 # Change setting for vagrant user
