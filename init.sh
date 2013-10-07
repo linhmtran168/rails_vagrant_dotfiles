@@ -4,7 +4,7 @@ sudo apt-get update
 sudo apt-get install -y software-properties-common
 
 # Install necessary packages
-sudo apt-get install -y zsh make vim tmux curl wget sqlite3 libsqlite3-dev libssl-dev openssl zlib1g zlib1g-dev zlibc libxslt-dev libxml2-dev g++ build-essential libreadline6-dev texinfo git python-software-properties python g++ make
+sudo apt-get install -y zsh make vim tmux curl wget sqlite3 libsqlite3-dev libssl-dev openssl zlib1g zlib1g-dev zlibc libxslt-dev libxml2-dev g++ build-essential libreadline6-dev texinfo git python-software-properties python g++
 
 # Install nodejs
 sudo add-apt-repository ppa:chris-lea/node.js
